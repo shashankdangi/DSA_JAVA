@@ -22,7 +22,12 @@ public class BostonNumber {
                 prime++;
             }
             if(num%prime == 0){
-                sum += prime;
+                int k = prime;
+                while(k>0){
+                    sum += k%10;
+                    k /= 10;
+                }
+                
             }
             num /= prime;
 
