@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Insertion_Sort_Algo {
     public static void main(String[] args) {
-        int[] arr = {1,12,14,15,2};
+        int[] arr = {3,2,5,6,1};
         int n = arr.length;
         sort(arr);
 
