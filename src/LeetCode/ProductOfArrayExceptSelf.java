@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ProductOfArrayExceptSelf {
     public static void main(String[] args) {
-        int[] arr = {2,3,4,6};
+        int[] arr = {1,2,3,4};
         int n = arr.length;
         int[] multiple = new int[n];
         int[] left  = new int[n];
