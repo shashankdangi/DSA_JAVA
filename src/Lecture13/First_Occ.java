@@ -12,7 +12,7 @@ public class First_Occ {
             return -1;
         }
         if(arr[i] == item ){
-            return 1;
+            return i;
         }
         return firstOcc(arr,item,i+1);
 
