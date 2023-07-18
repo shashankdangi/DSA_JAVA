@@ -13,9 +13,9 @@ public class Board_Path {
         if(curr>end){
             return;
         }
-        PrintPath(curr+1,end,ans+1);
-        PrintPath(curr+2, end,ans+2);
-        PrintPath(curr+3, end, ans+3);
+       for(int dice = 1; dice<=3; dice++){
+           PrintPath(curr+dice , end, ans+dice);
+       }
 
     }
 }
