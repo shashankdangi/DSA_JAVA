@@ -1,0 +1,22 @@
+package LeetCode;
+
+public class Lexiographic {
+    public static void main(String[] args) {
+        int n = 100;
+        Counting(0,n);
+    }
+    static void Counting(int curr , int n){
+        if(curr>n){
+            return;
+        }
+        System.out.println(curr);
+        int i = 0 ;
+        if(curr == 0){
+            i = 1;
+        }
+        for(; i<= 9 ; i++){
+            Counting(curr*10+i, n);
+        }
+
+    }
+}
