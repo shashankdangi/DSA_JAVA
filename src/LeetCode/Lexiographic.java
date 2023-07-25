@@ -2,7 +2,7 @@ package LeetCode;
 
 public class Lexiographic {
     public static void main(String[] args) {
-        int n = 100;
+        int n = 13;
         Counting(0,n);
     }
     static void Counting(int curr , int n){
