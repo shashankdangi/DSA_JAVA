@@ -7,12 +7,12 @@ public class RatInMaze {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
         int m = scn.nextInt();
-        char[][] nm = new char[n][m]; // Use "char" instead of "Character" for the array type.
+        char[][] nm = new char[n][m];
         int[][] ans = new int[n][m];
         for (int i = 0; i < n; i++) {
             String s = scn.next();
             for (int j = 0; j < s.length(); j++) {
-                nm[i][j] = s.charAt(j); // Corrected the method call to next() and charAt(0).
+                nm[i][j] = s.charAt(j);
             }
         }
         ratinmaze(nm, 0,0, ans);
@@ -35,10 +35,15 @@ public class RatInMaze {
         }
         arr[cr][cc] = 'X';
         ans[cr][cc] = 1;
-        ratinmaze( arr, cr-1 , cc,ans ); //up
-        ratinmaze(arr, cr+1, cc , ans); //down
-        ratinmaze(arr, cr, cc+1, ans); //right
-        ratinmaze(arr,cr,cc-1, ans);// left
+        int[] r = { -1 , 1, 0, 0};
+        int[] c = {0,0,1,-1};
+        for(int i = 0 ; i<c.length; i++){
+            ratinmaze(arr,cr+r[i], cc+c[i], ans);
+        }
+//        ratinmaze( arr, cr-1 , cc,ans ); //up
+//        ratinmaze(arr, cr+1, cc , ans); //down
+//        ratinmaze(arr, cr, cc+1, ans); //right
+//        ratinmaze(arr,cr,cc-1, ans);// left
         ans[cr][cc] = 0;
         arr[cr][cc] = 'O';
     }
