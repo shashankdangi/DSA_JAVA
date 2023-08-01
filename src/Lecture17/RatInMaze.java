@@ -40,10 +40,7 @@ public class RatInMaze {
         for(int i = 0 ; i<c.length; i++){
             ratinmaze(arr,cr+r[i], cc+c[i], ans);
         }
-//        ratinmaze( arr, cr-1 , cc,ans ); //up
-//        ratinmaze(arr, cr+1, cc , ans); //down
-//        ratinmaze(arr, cr, cc+1, ans); //right
-//        ratinmaze(arr,cr,cc-1, ans);// left
+
         ans[cr][cc] = 0;
         arr[cr][cc] = 'O';
     }
