@@ -62,7 +62,15 @@ public class LinkedList {
             k1.next = nn;
         }
     }
-
+    public int getfirst(){
+        return head.data;
+    }
+    public int getLast(){
+        return tail.data;
+    }
+    public int getAtIndex(int k ) throws  Exception{
+        return  getNode(k).data;
+    }
     public Node getNode(int k) throws Exception{
         if(k<0 || k>=size){
             throw new Exception("K is not correct");
