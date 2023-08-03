@@ -49,5 +49,29 @@ public class LinkedList {
         System.out.println(".");
     }
 
+    public void AddatIndex(int k , int item) throws Exception {
+        if(k == 0){
+            addFirst(item);
+        }else if (k == size){
+            addLast(item);
+        }else{
+            Node k1 = getNode(k-1);
+            Node nn = new Node();
+            nn.data = item;
+            nn.next = k1.next;
+            k1.next = nn;
+        }
+    }
+
+    public Node getNode(int k) throws Exception{
+        if(k<0 || k>=size){
+            throw new Exception("K is not correct");
+        }
+        Node temp = head;
+        for(int i = 0 ; i<k; i++){
+            temp = temp.next;
+        }
+        return temp;
+    }
 
 }
