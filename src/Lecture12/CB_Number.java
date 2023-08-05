@@ -4,19 +4,21 @@ import java.util.Scanner;
 
 public class CB_Number {
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        System.out.println(CountCBnumbers("81615"));
+        // TODO Auto-generated method stub
+        String s = "765676";
+//		int i = Integer.parseInt(s);// num
+//		long ll = Long.parseLong(s);//
+        System.out.println(CountCBnumber(s));
     }
 
-    static int CountCBnumbers(String str) {
+    public static int CountCBnumber(String s) {
         int count = 0;
-        boolean[] visited = new boolean[str.length()];
-        for (int len = 1; len <= str.length(); len++) {
-            for (int j = len; j <= str.length(); j++) {
+        boolean[] visited = new boolean[s.length()];
+        for (int len = 1; len <= s.length(); len++) {
+            for (int j = len; j <= s.length(); j++) {
                 int i = j - len;
-                String s1 = str.substring(i, j);
-                long num = Long.parseLong(s1);
-                if (IsCB_Number(num) && isvisited(visited, i, j - 1)) {
+                String s1 = s.substring(i, j);
+                if (ISCBNumber(Long.parseLong(s1)) == true && isvisted(visited, i, j - 1) == true) {
                     count++;
                     for (int k = i; k < j; k++) {
                         visited[k] = true;
@@ -27,27 +29,33 @@ public class CB_Number {
         return count;
     }
 
-    static boolean isvisited(boolean[] visited, int i, int j) {
+    public static boolean isvisted(boolean[] visited, int i, int j) {
+        // TODO Auto-generated method stub
         for (int k = i; k <= j; k++) {
-            if (visited[k]) {
+            if (visited[k] == true) {
                 return false;
             }
         }
         return true;
+
     }
 
-    static boolean IsCB_Number(long num) {
-        int[] cb = {2, 3, 5, 7, 1, 13, 17, 19, 23,29};
+    public static boolean ISCBNumber(long num) {
         if (num == 0 || num == 1) {
             return false;
         }
-        for (int i = 0; i < cb.length; i++) {
-            if (cb[i] == num) {
+        int[] arr = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == num) {
                 return true;
-            } else if (num % cb[i] == 0) {
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (num % arr[i] == 0) {
                 return false;
             }
         }
         return true;
+
     }
 }
