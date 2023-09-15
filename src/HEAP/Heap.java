@@ -18,7 +18,6 @@ public class Heap {
             upheapify(pi);
         }
     }
-
     public  int getmin(){
         return list.get(0);
     }
