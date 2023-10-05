@@ -16,7 +16,7 @@ public class graph {
 
     public void AddEdge(int v1, int v2, int cost) {
         map.get(v1).put(v2, cost);
-        map.get(v2).put(v2, cost);
+        map.get(v2).put(v1, cost);
     }
 
     public boolean ContainsEdge(int v1, int v2) {
@@ -76,6 +76,7 @@ public class graph {
             return;
         }
         visited.add(src);
+        System.out.println(visited);
         for (int nbrs : map.get(src).keySet()) {
             if (!visited.contains(nbrs)) {
                 Allpath(nbrs, des, visited, ans + src);
